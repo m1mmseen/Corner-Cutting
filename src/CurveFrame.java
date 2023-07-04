@@ -33,6 +33,7 @@ public class CurveFrame extends JFrame implements MouseListener {
         this.polygon = new Polygon();
     }
 
+    // "Cutting-Corner" Methode
     private Polygon subdivide(Polygon polygon) {
         int[] curPoint = new int[2];
         Polygon cutPolygon = new Polygon();
@@ -53,6 +54,7 @@ public class CurveFrame extends JFrame implements MouseListener {
         return cutPolygon;
     }
 
+    // Rekursiver Aufruf der "Cutting-Corner"-Methode variable nach steps
     private Polygon subdivide(Polygon polygon, int steps) {
 
         int stepsDone = 0;
@@ -64,7 +66,7 @@ public class CurveFrame extends JFrame implements MouseListener {
         return cutPolygon;
     }
 
-    // MouseListener-Methoden
+    // MouseListener-Methode
     @Override
     public void mouseClicked(MouseEvent e) {
         mouseClicked++;
@@ -79,6 +81,7 @@ public class CurveFrame extends JFrame implements MouseListener {
         }
     }
 
+    // NICHT GENUTZTE MOUSELISTENER
     @Override
     public void mousePressed(MouseEvent e) {
 
